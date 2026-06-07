@@ -179,7 +179,7 @@
     animation:fadeIn 1.6s ease both 0.6s;
   }
 
-  /* COVER UPLOAD BOX — styled like the images' purple dashed box but in ember theme */
+  /* COVER UPLOAD BOX */
   .cover-upload {
     width:100%; max-width:760px;
     height:370px;
@@ -466,7 +466,7 @@
   ══════════════════════════════════ */
   #screen-next {
     position:relative; z-index:1;
-    padding:7rem 2rem 6rem;
+    padding:7rem 2rem 4rem;
     display:flex; flex-direction:column;
     align-items:center; justify-content:center;
     text-align:center;
@@ -516,10 +516,60 @@
     box-shadow:0 0 50px rgba(232,80,10,0.5);
   }
 
+  /* ══════════════════════════════════
+     FOOTER — AI ATTRIBUTION
+  ══════════════════════════════════ */
+  #ai-footer {
+    position:relative; z-index:1;
+    padding:3rem 2rem 5rem;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+  }
+  .ai-card {
+    background:var(--card-bg);
+    border:1px solid var(--card-bdr);
+    border-top:3px solid var(--gold);
+    border-radius:8px; 
+    padding:2.5rem 3rem;
+    width:100%; max-width:760px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.3);
+    transition:border-color 0.3s, box-shadow 0.3s;
+  }
+  .ai-card:hover {
+    border-color:var(--ember2);
+    box-shadow:0 0 35px rgba(232,80,10,0.15);
+  }
+  .ai-eyebrow {
+    font-family:'Bebas Neue', sans-serif;
+    font-size:0.85rem; letter-spacing:0.4em;
+    color:var(--text2); text-shadow:0 0 10px rgba(212,144,10,0.4);
+    margin-bottom:1.5rem; text-align:center;
+  }
+  .ai-list {
+    list-style:none; display:flex; flex-direction:column; gap:1.2rem;
+  }
+  .ai-list li {
+    display:flex; align-items:flex-start; gap:1.2rem;
+    font-family:'Montserrat', sans-serif;
+    font-size:0.95rem; color:var(--text); line-height:1.6;
+  }
+  .ai-list strong {
+    color:var(--ember2); font-weight:600; letter-spacing:0.05em;
+  }
+  .ai-icon-box {
+    width:32px; height:32px; border-radius:6px;
+    background:rgba(232,80,10,0.12);
+    border:1px solid rgba(232,80,10,0.3);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0; font-size:1rem; margin-top:0.1rem;
+    box-shadow:0 0 10px rgba(232,80,10,0.2);
+  }
+
   @media(max-width:700px){
     .cover-cards { grid-template-columns:1fr; }
     .overview-grid { grid-template-columns:1fr; }
     .cover-upload { height:260px; }
+    .ai-card { padding:2rem 1.5rem; }
   }
 
   /* ── ANIMATIONS ── */
@@ -679,6 +729,27 @@
     </a>
   </div>
 </section>
+
+<!-- ════════════ AI MODELS FOOTER ════════════ -->
+<footer id="ai-footer" class="reveal">
+  <div class="ai-card">
+    <div class="ai-eyebrow">THE AI MODELS USED</div>
+    <ul class="ai-list">
+      <li>
+        <div class="ai-icon-box">🧠</div>
+        <div>
+          <strong>ChatGPT / Claude:</strong> Used for idea generation, brainstorming, and code assistance.
+        </div>
+      </li>
+      <li>
+        <div class="ai-icon-box">✨</div>
+        <div>
+          <strong>Gemini:</strong> Used for picture generation and code assistance.
+        </div>
+      </li>
+    </ul>
+  </div>
+</footer>
 
 <script>
   // ── PARTICLES ──
